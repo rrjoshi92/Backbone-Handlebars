@@ -1,8 +1,7 @@
 ﻿
 
 var UserView = Backbone.View.extend({
-    el: '#container',
-
+    el: '#container',    
     initialize: function () {
         me = this;
         this.user1 = new User({});
@@ -20,7 +19,7 @@ var UserView = Backbone.View.extend({
             var markup = me.compiletemplate(htmltemplate);
             me.$el.html(markup);          
         });
-      
+        $('.submit').click(me.sendmail);
     },
     navigate: function () {
         $.get("scripts/tamplates/form2.html", function(data){
@@ -39,7 +38,8 @@ var UserView = Backbone.View.extend({
         "focusout #city": "City",
         "focusout #state": "State",
         "focusout #zipcode": "ZipCode",
-        "click #complete": "submitForm",
+        "click #complete": "submitForm"
+       
     },
 
     firstname: function () {
@@ -115,6 +115,40 @@ var UserView = Backbone.View.extend({
             });           
         } else {
             $('#error').text("Address is a required Field");
+        }
+    },
+    toastmsg: function (status) {
+        var x = document.getElementById("snackbar");
+        if (status) {
+            $('#snackbar').text("");
+            $('#snackbar').text("Message sent successfully!!");
+            document.getElementById("contectme").reset();
+        } else {
+            $('#snackbar').text("");
+            $('#snackbar').text("Error occurred! Please try again.");
+        }
+        x.className = "show";
+        setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+    },
+    sendmail: function(){
+        var name = $('#name').val();
+        var sub = $('#Subject').val();
+        var email = $('#email').val();
+        var msg = $('#message').val();
+        if (name && sub && email && msg) {
+            $.ajax({
+                url: "http://mywork.dev-tech.club/ravi_mail.php",
+                data: { "template": "<html><body><div> <div><label>Name: </label>  " + name + "</div> <div><lable>Email: </lable> " + email + "</div> <div><label>Subject: </label>" + sub + "</div>    <div><label>Message: </label>" + msg + "</div></div></body></html>" },
+                success: function (data) {
+                    data = JSON.parse(data);
+                    me.toastmsg(data.status);
+                },
+                error: function (XHR, status, error) {
+                    toastmsg(false);
+                }
+            })
+        } else {
+            me.toastmsg(false);
         }
     }
 });
