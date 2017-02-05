@@ -1,0 +1,163 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Hyperspace by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+    <title>Backbone and Handalbars</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+    <script src="scripts/lib/jquery-3.1.1.min.js"></script>
+    <script src="scripts/lib/underscore.js"></script>
+    <script src="scripts/lib/backbone.js"></script>
+    <script src="scripts/lib/handlebars.js"></script>
+    <script src="scripts/lib/jquery.validate.min.js"></script>
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Welcome</a></li>
+                    <li><a href="#one">Demo</a></li>
+                    <li><a href="#two">Technologies</a></li>
+                    <li><a href="#three">Get in touch</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen fade-up">
+            <div class="inner">
+                <h1>Backbone And Handalbar Demo</h1>
+                <p>This Demo applocation just showcase my POC work on Backbone and Handalbar JS.</p>
+                <p>In this application I have worked on Backbone Models, Views and used HandalbarJS for tamplating.</p>
+                <ul class="actions">
+                    <li><a href="http://ravi.dev-tech.club/portfolio/" class="button scrolly">View Full Profile</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- One -->
+        <section id="one" class="wrapper style3 fade-up">
+           
+            <div class="inner">
+                <p id="error"></p>
+                <div id="container"></div>
+            </div>
+        </section>
+
+        <!-- Two -->
+        <section id="two" class="wrapper style2 spotlights">
+            <section>
+                <a href="#" class="image"><img src="images/Baackbone.png" alt="" data-position="center center" /></a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>Why Backbone?</h2>
+                        <p>Backbone.js is basically an uber-light framework that allows you to structure your Javascript code in an MVC (Model, View, Controller) fashion.</p>
+                        <ul class="actions">
+                            <li><a href="http://backbonejs.org/" class="button">Learn more</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <a href="#" class="image"><img src="images/handlebars.png" alt="" data-position="top center" /></a>
+                <div class="content">
+                    <div class="inner">
+                        <h2>Why Haandalbars ?</h2>
+                        <p>Handlebars is a logic-less templating engine.The most important use of Handlebars, and any templating engine, is to keep your HTML pages simple and clean and decoupled from the logic-based JavaScript files, and Handlebars serves this purpose well.</p>
+                        <ul class="actions">
+                            <li><a href="http://handlebarsjs.com/" class="button">Learn more</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+        </section>
+
+        <!-- Three -->
+        <section id="three" class="wrapper style1 fade-up">
+            <div class="inner">
+                <h2>Get in touch</h2>
+                <p>Intrested in working together? Fill out the form below with some info about your project and I will get back to you as soon as I can.Please allow a couple of days for me to respond.</p>
+                <div class="split style1">
+                    <section>
+                        <form method="post" action="#">
+                            <div class="field half first">
+                                <label for="name">Name</label>
+                                <input type="text" name="name" id="name" />
+                            </div>
+                            <div class="field half">
+                                <label for="email">Email</label>
+                                <input type="text" name="email" id="email" />
+                            </div>
+                            <div class="field">
+                                <label for="message">Message</label>
+                                <textarea name="message" id="message" rows="5"></textarea>
+                            </div>
+                            <ul class="actions">
+                                <li><a href="" class="button submit">Send Message</a></li>
+                            </ul>
+                        </form>
+                    </section>
+                    <section>
+                        <ul class="contact">                            
+                            <li>
+                                <h3>Email</h3>
+                                <a href="#">rrjoshi92@gmail.com</a>
+                            </li>
+                            <li>
+                                <h3>Phone</h3>
+                                <span>(510) 458-8560</span>
+                            </li>
+                            <li>
+                                <h3>Social</h3>
+                                <ul class="icons">                                    
+                                    <li><a href="https://www.facebook.com/ravijoshi.23" class="fa-facebook"><span class="label">Facebook</span></a></li>                                    
+                                    <li><a href="https://www.instagram.com/ravi_2392/" class="fa-instagram"><span class="label">Instagram</span></a></li>
+                                    <li><a href="https://www.linkedin.com/in/rrjoshi" class="fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy;Ravi Joshi. All rights reserved.</li>               
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
+    <script src="assets/js/main.js"></script>
+    <script src="scripts/models/user.js"></script>>
+    <script src="scripts/views/userview.js"></script>
+</body>
+</html>
